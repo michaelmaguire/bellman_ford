@@ -12,8 +12,8 @@ vector<int> bellmanFord(int number_of_nodes, vector<vector<int>>& edges, int sta
     for (int i = 0; ( i < number_of_nodes) && relaxation_took_place; i++) {
         relaxation_took_place = false;
         for (vector<int>& edge : edges) {
-            int u = edge[0], v = edge[1], wt = edge[2];
-            int new_dist_to_v = distance_to[u] + wt;
+            int u = edge[0], v = edge[1], weight = edge[2];
+            int new_dist_to_v = distance_to[u] + weight;
             if (distance_to[u] != numeric_limits<int>::max() && new_dist_to_v < distance_to[v]) {
 
                 relaxation_took_place = true;
